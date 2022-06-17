@@ -18,14 +18,14 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Entity
-@Table(name = "usuarios")
+@Table(name = "usuario", schema = "hello")
 public class UsuarioEntity implements Serializable {
 
 	private static final long serialVersionUID = 2078417115793871299L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_usuario")
+	@Column(name = "usuario_id")
 	private Long id;
 	private String nombre;
 	private String apellido1;

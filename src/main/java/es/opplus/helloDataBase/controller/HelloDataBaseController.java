@@ -35,7 +35,7 @@ public class HelloDataBaseController {
 	@Autowired
 	private UsuarioService usuarioService;
 	
-	@GetMapping(path = "/")
+	@GetMapping(path = "/saludo")
 	@Operation(summary = "Hello", tags = "Saludo params")
 	public String greeting(@RequestParam(value = "name", defaultValue = "world") String name) {
 		return String.format("hello %s", name);
