@@ -51,6 +51,13 @@ jobs:
           flags: "--allow-unauthenticated"
           image: eu.gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{ github.sha }}
 
+      - name: SonarCloud Scan
+        id: sonar
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        
       # If required, use the Cloud Run url output in later steps
       - name: Show Output
         run: echo ${{ steps.deploy.outputs.url }}
